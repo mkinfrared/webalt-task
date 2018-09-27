@@ -1,0 +1,373 @@
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Noto Sans Italic'), local('NotoSans-Italic'), url(https://fonts.gstatic.com/s/notosans/v7/o-0OIpQlx3QUlC5A4PNr4ARGQ_w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Noto Sans Bold Italic'), local('NotoSans-BoldItalic'), url(https://fonts.gstatic.com/s/notosans/v7/o-0TIpQlx3QUlC5A4PNr4Az5ZuyHzWg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v7/o-0IIpQlx3QUlC5A4PNr4TRF.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'), url(https://fonts.gstatic.com/s/notosans/v7/o-0NIpQlx3QUlC5A4PNjXhFVYNyE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Noto Serif Italic'), local('NotoSerif-Italic'), url(https://fonts.gstatic.com/s/notoserif/v6/ga6Kaw1J5X9T9RW6j9bNfFImbjC-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Serif'), local('NotoSerif'), url(https://fonts.gstatic.com/s/notoserif/v6/ga6Iaw1J5X9T9RW6j9bNfFMWbQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v13/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYhQ.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 41px 34px;
+}
+@media (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 41px 20px;
+  }
+}
+@media (max-width: 479px) {
+  .wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 26px 5px;
+  }
+}
+.header {
+  display: flex;
+  padding: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 21px;
+}
+.header h1 {
+  font: 40px 'Playfair Display', serif;
+  display: block;
+  text-transform: uppercase;
+}
+@media (max-width: 479px) {
+  .header h1 {
+    font-size: 26px;
+  }
+}
+.header:after {
+  content: '';
+  display: block;
+  flex-grow: 2;
+  border-bottom: 2px solid #000000;
+  transform: translateY(-10px);
+  margin-left: 18px;
+}
+.today-photo {
+  position: relative;
+  width: 100%;
+}
+.today-photo .today-photo__image {
+  position: relative;
+}
+.today-photo .today-photo__image img {
+  width: 100%;
+  display: block;
+}
+.today-photo .today-photo__image:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #FFFFFF transparent;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+  .today-photo .today-photo__image:after {
+    display: none;
+  }
+}
+.today-photo .today-date {
+  width: 160px;
+  height: 104px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  top: 20px;
+  left: 20px;
+}
+@media (max-width: 767px) {
+  .today-photo .today-date {
+    width: 80px;
+    height: 53px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    top: 10px;
+    left: 10px;
+  }
+}
+@media (max-width: 479px) {
+  .today-photo .today-date {
+    top: 5px;
+    left: 5px;
+  }
+}
+.today-photo .description {
+  margin-top: 12px;
+}
+@media (max-width: 767px) {
+  .today-photo .description {
+    display: none;
+  }
+}
+.today-photo .description p {
+  font: bold 13px 'Noto Sans';
+}
+.today-photo .description .photo-source {
+  color: #ACACAC;
+  font-weight: 400;
+}
+.date {
+  text-align: center;
+  vertical-align: middle;
+}
+.date .number {
+  font: 36px 'Noto Serif';
+  display: block;
+}
+@media (max-width: 767px) {
+  .date .number {
+    font-size: 18px;
+  }
+}
+.date .month {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+@media (max-width: 767px) {
+  .date .month {
+    font-size: 14px;
+  }
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  grid-template-rows: repeat(8, 104px);
+  grid-gap: 20px 20px;
+  margin-top: 15px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 53px);
+    grid-gap: 10px 10px;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 479px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 48px);
+    grid-gap: 5px 5px;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+}
+.content div {
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .content div {
+    min-width: 72px;
+  }
+}
+.content div img {
+  width: 100%;
+}
+@media (max-width: 479px) {
+  .content div img {
+    width: auto;
+  }
+}
+.content div:nth-child(4) {
+  grid-column-start: 4;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+}
+@media (max-width: 767px) {
+  .content div:nth-child(4) {
+    grid-column-start: 4;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 3;
+  }
+}
+@media (max-width: 479px) {
+  .content div:nth-child(4) {
+    grid-area: auto;
+  }
+}
+.content div:nth-child(19) {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: span 2;
+}
+@media (max-width: 767px) {
+  .content div:nth-child(19) {
+    grid-area: auto;
+  }
+}
+@media (max-width: 479px) {
+  .content div:nth-child(25) ~ div {
+    display: none;
+  }
+}
+.content .content__date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.content .content__date:after {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: 136px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3px 0 3px 3px;
+  border-color: transparent transparent transparent #000000;
+}
+.pagination {
+  margin-top: 30px;
+}
+.pagination ul {
+  display: flex;
+  font: 13px 'Noto Sans';
+  list-style: none;
+  align-items: center;
+}
+.pagination li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.pagination li:first-child {
+  color: #848484;
+  width: auto;
+  cursor: auto;
+  margin-right: 25px;
+}
+@media (max-width: 479px) {
+  .pagination li:first-child {
+    display: none;
+  }
+}
+.pagination li:last-child {
+  width: auto;
+  margin-right: 0;
+  margin-left: 15px;
+}
+.pagination li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+.pagination .active {
+  background-color: #E6E6E6;
+  border-radius: 50%;
+}
+.ad-banner {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-start: 3;
+  grid-row-end: span 2;
+  min-width: 100%;
+}
+@media (min-width: 479px) {
+  .ad-banner {
+    display: none;
+  }
+}
+.ad-banner .logo {
+  width: 25%;
+}
+.ad-banner .logo img {
+  height: 100%;
+}
+.ad-banner .ad-banner_description {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  background-color: #FBF6E8;
+  padding: 20px;
+}
+.ad-banner .ad-banner_description p {
+  color: #BEBEBE;
+  font: bold 10px 'Noto Sans';
+}
+.ad-banner .ad-banner_description h5 {
+  font: bold 13px 'Noto Sans';
+}
+.ad-banner .ad-banner_description h6 {
+  font: 12px 'Noto Sans';
+}
+/*# sourceMappingURL=styles.css.map */
